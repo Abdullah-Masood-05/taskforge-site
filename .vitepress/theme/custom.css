@@ -1,0 +1,163 @@
+/* ── TaskForge theme: warm dark neutrals, amber as the working accent.
+   Amber (#d97706 family) is the product's signature — links, active nav,
+   the sidebar bar and the wordmark. Buttons stay INVERTED (never amber
+   fills under text) so contrast is never in question. */
+
+/* ── Light theme ── */
+:root {
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-alt: #fafaf9;
+  --vp-c-bg-soft: #f5f5f4;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-divider: #e7e5e4;
+  --vp-c-border: #d6d3d1;
+  --vp-c-text-1: #1c1917;
+  --vp-c-text-2: #57534e;
+  --vp-c-text-3: #8e8a86;
+
+  --vp-c-brand-1: #b45309; /* amber-700 — links/active nav only */
+  --vp-c-brand-2: #92400e; /* hover */
+  --vp-c-brand-3: #78350f;
+  --vp-c-brand-soft: rgba(217, 119, 6, 0.12);
+
+  /* Primary buttons are INVERTED, never amber. */
+  --vp-button-brand-bg: #1c1917;
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-border: transparent;
+  --vp-button-brand-hover-bg: #33302c;
+  --vp-button-brand-hover-text: #ffffff;
+  --vp-button-brand-active-bg: #000000;
+  --vp-button-brand-active-text: #ffffff;
+  --vp-button-alt-bg: var(--vp-c-bg-soft);
+  --vp-button-alt-text: var(--vp-c-text-1);
+  --vp-button-alt-border: var(--vp-c-border);
+  --vp-button-alt-hover-bg: var(--vp-c-bg-elv);
+  --vp-button-alt-hover-border: var(--vp-c-text-3);
+
+  --vp-code-block-bg: #f5f5f4;
+  --vp-code-color: var(--vp-c-text-1); /* inline code: no accent tint */
+  --vp-code-bg: #edebe9;
+
+  /* Hero wordmark: hard-stop two-tone — "Task" amber, "Forge" ink. */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(
+    90deg,
+    #b45309 0%,
+    #b45309 45%,
+    #1c1917 45%
+  );
+  --vp-home-hero-image-background-image: none;
+  --vp-home-hero-image-filter: none;
+}
+
+/* ── Dark theme (default) ── */
+.dark {
+  --vp-c-bg: #121110;
+  --vp-c-bg-alt: #0d0c0b; /* sidebar / nav */
+  --vp-c-bg-soft: #1c1a18; /* cards, tabs, custom blocks */
+  --vp-c-bg-elv: #242220; /* hover / elevated */
+  --vp-c-divider: #2b2926;
+  --vp-c-border: #383530;
+  --vp-c-text-1: #f4f2f0;
+  --vp-c-text-2: #aba69f;
+  --vp-c-text-3: #7b766f;
+
+  --vp-c-brand-1: #f59e0b; /* amber links — high contrast on the dark bg */
+  --vp-c-brand-2: #fbbf24;
+  --vp-c-brand-3: #d97706;
+  --vp-c-brand-soft: rgba(245, 158, 11, 0.14);
+
+  --vp-button-brand-bg: #f4f2f0;
+  --vp-button-brand-text: #121110;
+  --vp-button-brand-hover-bg: #ffffff;
+  --vp-button-brand-hover-text: #121110;
+  --vp-button-brand-active-bg: #e4e2e0;
+  --vp-button-brand-active-text: #121110;
+
+  --vp-code-block-bg: #0c0b0a;
+  --vp-code-color: var(--vp-c-text-1);
+  --vp-code-bg: #1c1a18;
+
+  --vp-home-hero-name-background: linear-gradient(
+    90deg,
+    #f59e0b 0%,
+    #f59e0b 45%,
+    #f4f2f0 45%
+  );
+}
+
+/* Links: accent text, underline appears on hover. */
+.vp-doc a {
+  text-decoration: none;
+}
+.vp-doc a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar active indicator: thin amber bar. */
+.VPSidebarItem.is-active > .item > .link > .text {
+  color: var(--vp-c-brand-1);
+}
+.VPSidebarItem.level-0.is-active > .item {
+  border-left: 2px solid var(--vp-c-brand-1);
+  padding-left: 8px;
+  margin-left: -10px;
+}
+
+/* Danger blocks differentiate by FORM, not hue: icon, bold label, left bar. */
+.custom-block.danger {
+  border-left: 3px solid var(--vp-c-danger-1);
+}
+.custom-block.danger .custom-block-title::before {
+  content: '⚠ ';
+}
+.custom-block.danger .custom-block-title {
+  font-weight: 700;
+}
+
+/* Tagline in secondary text. */
+.VPHero .tagline {
+  color: var(--vp-c-text-2);
+}
+
+/* Feature cards: neutral surfaces, hairline border. */
+.VPFeature {
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-border);
+}
+.VPFeature:hover {
+  background: var(--vp-c-bg-elv);
+}
+.VPFeature .title {
+  color: var(--vp-c-text-1);
+}
+.VPFeature .details {
+  color: var(--vp-c-text-2);
+}
+
+/* Screenshots: framed, rounded, never full-bleed against the page bg. */
+.vp-doc img {
+  border: 1px solid var(--vp-c-border);
+  border-radius: 10px;
+}
+
+/* Terminal demo block: pure-dark console in both themes (it is content). */
+.tf-terminal {
+  background: #0c0b0a;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  font-family: var(--vp-font-family-mono);
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-x: auto;
+}
+.tf-terminal .prompt {
+  color: #f59e0b;
+}
+.tf-terminal .dim {
+  color: #7b766f;
+}
+.tf-terminal .out {
+  color: #aba69f;
+}
