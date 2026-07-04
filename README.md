@@ -8,6 +8,7 @@
   <a href="https://vitepress.dev"><img src="https://img.shields.io/badge/VitePress-1.6-5C73E7?logo=vite&logoColor=white" alt="VitePress"/></a>
   <a href="https://bun.sh"><img src="https://img.shields.io/badge/Bun-latest-000000?logo=bun&logoColor=white" alt="Bun"/></a>
   <a href="https://pages.github.com"><img src="https://img.shields.io/badge/GitHub%20Pages-deployed-222222?logo=github&logoColor=white" alt="GitHub Pages"/></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPLv3-22c55e" alt="GPLv3 license"/></a>
 </p>
 
 The documentation website for [TaskForge](https://taskforge-app-869.netlify.app) —
@@ -44,3 +45,7 @@ public/screenshots/ # images used across the guide
 - [taskforge-backend](https://github.com/Abdullah-Masood-05/taskforge-backend) — Django REST API
 - [taskforge-frontend](https://github.com/Abdullah-Masood-05/taskforge-frontend) — Next.js web app
 - [taskforge-desktop](https://github.com/Abdullah-Masood-05/taskforge-desktop) — Tauri desktop app
+
+## License
+
+This project is licensed under the **GNU General Public License v3.0** – see the [LICENSE](LICENSE) file for details.
