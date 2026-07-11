@@ -10,7 +10,32 @@ export default defineConfig({
   lastUpdated: true,
   // Dead links are a build failure, not a warning.
   ignoreDeadLinks: false,
-  head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/taskforge-site/logo.svg' }]],
+  head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/taskforge-site/logo.svg' }],
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:title', content: 'TaskForge' }],
+    [
+      'meta',
+      {
+        property: 'og:description',
+        content:
+          'Multi-tenant project management — Kanban boards, a mission-control project dashboard, and a native desktop app.',
+      },
+    ],
+    ['meta', { property: 'og:image', content: 'https://abdullah-masood-05.github.io/taskforge-site/og-image.png' }],
+    ['meta', { property: 'og:url', content: 'https://abdullah-masood-05.github.io/taskforge-site/' }],
+    ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+    ['meta', { name: 'twitter:title', content: 'TaskForge' }],
+    [
+      'meta',
+      {
+        name: 'twitter:description',
+        content:
+          'Multi-tenant project management — Kanban boards, a mission-control project dashboard, and a native desktop app.',
+      },
+    ],
+    ['meta', { name: 'twitter:image', content: 'https://abdullah-masood-05.github.io/taskforge-site/og-image.png' }],
+  ],
   appearance: 'dark',
   themeConfig: {
     logo: '/logo.svg',
