@@ -11,7 +11,7 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPLv3-22c55e" alt="GPLv3 license"/></a>
 </p>
 
-The documentation website for [TaskForge](https://taskforge-app-869.netlify.app) —
+The documentation website for [TaskForge](https://taskforge-app-869.netlify.app):
 usage guides, self-hosting instructions and the API reference. Built with
 VitePress and deployed to GitHub Pages on every push to `main`.
 
@@ -25,7 +25,7 @@ bun run docs:dev       # http://localhost:5173
 ## Build
 
 ```bash
-bun run docs:build     # output in .vitepress/dist — dead links fail the build
+bun run docs:build     # output in .vitepress/dist (dead links fail the build)
 bun run docs:preview   # serve the built site locally
 ```
 
@@ -42,10 +42,10 @@ public/screenshots/ # images used across the guide
 
 ## Related repositories
 
-- [taskforge-backend](https://github.com/Abdullah-Masood-05/taskforge-backend) — Django REST API
-- [taskforge-frontend](https://github.com/Abdullah-Masood-05/taskforge-frontend) — Next.js web app
-- [taskforge-desktop](https://github.com/Abdullah-Masood-05/taskforge-desktop) — Tauri desktop app
+- [taskforge-backend](https://github.com/Abdullah-Masood-05/taskforge-backend): Django REST API
+- [taskforge-frontend](https://github.com/Abdullah-Masood-05/taskforge-frontend): Next.js web app
+- [taskforge-desktop](https://github.com/Abdullah-Masood-05/taskforge-desktop): Tauri desktop app
 
 ## License
 
-This project is licensed under the **GNU General Public License v3.0** – see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **GNU General Public License v3.0**. See the [LICENSE](LICENSE) file for details.
