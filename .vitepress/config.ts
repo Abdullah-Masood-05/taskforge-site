@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
   title: 'TaskForge',
   description:
-    'Multi-tenant project management — Kanban boards, a mission-control project dashboard, and a native desktop app.',
+    'Multi-tenant project management: Kanban boards, a mission-control project dashboard, and a native desktop app.',
   base: '/taskforge-site/',
   // README.md is for GitHub (its image path is repo-relative), not a site page.
   srcExclude: ['README.md'],
@@ -19,7 +19,7 @@ export default defineConfig({
       {
         property: 'og:description',
         content:
-          'Multi-tenant project management — Kanban boards, a mission-control project dashboard, and a native desktop app.',
+          'Multi-tenant project management: Kanban boards, a mission-control project dashboard, and a native desktop app.',
       },
     ],
     ['meta', { property: 'og:image', content: 'https://abdullah-masood-05.github.io/taskforge-site/og-image.png' }],
@@ -31,7 +31,7 @@ export default defineConfig({
       {
         name: 'twitter:description',
         content:
-          'Multi-tenant project management — Kanban boards, a mission-control project dashboard, and a native desktop app.',
+          'Multi-tenant project management: Kanban boards, a mission-control project dashboard, and a native desktop app.',
       },
     ],
     ['meta', { name: 'twitter:image', content: 'https://abdullah-masood-05.github.io/taskforge-site/og-image.png' }],
@@ -90,7 +90,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/Abdullah-Masood-05/taskforge-backend' },
     ],
     footer: {
-      message: 'TaskForge — web, API and desktop.',
+      message: 'TaskForge: web, API and desktop.',
       copyright: 'TaskForge',
     },
     search: { provider: 'local' },

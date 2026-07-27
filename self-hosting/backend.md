@@ -5,7 +5,7 @@ and Redis. Source: [taskforge-backend](https://github.com/Abdullah-Masood-05/tas
 
 ## Quick start with Docker
 
-The fastest path — Postgres, Redis and the API in one command:
+The fastest path: Postgres, Redis and the API in one command:
 
 ```bash
 git clone https://github.com/Abdullah-Masood-05/taskforge-backend.git
@@ -59,7 +59,7 @@ The essentials (full list in `.env.example`):
 
 | Variable | Purpose |
 |---|---|
-| `SECRET_KEY` | Django secret — generate a long random value |
+| `SECRET_KEY` | Django secret, generate a long random value |
 | `DATABASE_URL` | Postgres DSN, e.g. `postgres://user:pass@localhost:5432/taskforge` |
 | `REDIS_URL` | Redis DSN, e.g. `redis://localhost:6379/0` |
 | `ALLOWED_HOSTS` | Comma-separated hostnames for production |
@@ -68,19 +68,19 @@ The essentials (full list in `.env.example`):
 
 ## Production notes
 
-- Serve with an ASGI server (the project ships with **Daphne**) — the
+- Serve with an ASGI server (the project ships with **Daphne**), the
   notification layer uses Django Channels over WebSockets.
 - Point your platform's **health check at `/health/`**. The endpoint is
-  deliberately exempt from API rate limiting — platform probes fire every
+  deliberately exempt from API rate limiting. Platform probes fire every
   few seconds and must never be throttled into a 429/restart loop.
 - Run `python manage.py migrate` on every deploy; migrations are
   data-preserving.
-- The test suite (`pytest`) covers models, permissions and the API — run it
+- The test suite (`pytest`) covers models, permissions and the API, run it
   against your configuration before going live.
 
 ## Deploying to Render
 
-The repository includes a `render.yaml` blueprint — create a new Blueprint
+The repository includes a `render.yaml` blueprint, create a new Blueprint
 service from the repo and Render provisions the web service and database.
 Set the environment variables above in the service settings, and make sure
 the service's health check path is `/health/`.

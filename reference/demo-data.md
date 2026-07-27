@@ -44,8 +44,8 @@ python manage.py seed_demo_project --large-project --reset
 
 Flags:
 
-- `--large-project` — the full ~150-task board (default is ~50)
-- `--reset` — delete and recreate **only** this demo project; other
+- `--large-project`: the full ~150-task board (default is ~50)
+- `--reset`: delete and recreate **only** this demo project; other
   organizations and projects are untouched
 
 Seeding is deterministic where it matters (same users, same structure), so

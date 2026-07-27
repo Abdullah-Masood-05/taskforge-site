@@ -1,7 +1,7 @@
 # Import, export & reports
 
-Projects are portable. TaskForge round-trips a whole project — columns,
-labels, tasks, assignees, dates — as a single JSON file, and separately
+Projects are portable. TaskForge round-trips a whole project (columns,
+labels, tasks, assignees, dates) as a single JSON file, and separately
 renders boards as PDF reports.
 
 ## Exporting a project
@@ -36,7 +36,7 @@ contains everything needed to rebuild the board:
 ```
 
 Use it for backups, for moving a project between organizations, or as a
-**template** — a "new client onboarding" board you re-import for every
+**template**: a "new client onboarding" board you re-import for every
 engagement.
 
 ## Importing a project
@@ -46,11 +46,11 @@ before writing anything:
 
 ![The import preview modal](/screenshots/import-modal.png)
 
-The preview lists what will be created — columns, labels and task counts —
+The preview lists what will be created (columns, labels and task counts)
 so a malformed or unexpected file never lands on your board by surprise.
 Confirm to create the project.
 
-Assignees are matched **by email** — existing users are linked, and unknown
+Assignees are matched **by email**: existing users are linked, and unknown
 emails are created and added to the organization, so templates travel
 cleanly between teams. Files are capped at 5 MB, and malformed JSON is
 rejected with a clear error before anything is created.
@@ -64,8 +64,8 @@ large board), then switches to **Download PDF**.
 
 ## Scripting it
 
-Both directions are plain API calls, so you can automate them —
-nightly backup of every project, or seeding boards from CI:
+Both directions are plain API calls, so you can automate them:
+nightly backup of every project, or seeding boards from CI.
 
 ```bash
 # Export (JWT + org header, see the API reference)

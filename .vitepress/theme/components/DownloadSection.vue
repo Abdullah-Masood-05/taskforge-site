@@ -50,7 +50,7 @@ onMounted(async () => {
       <h3>
         TaskForge Desktop <span v-if="version" class="version">{{ version }}</span>
       </h3>
-      <p class="subtitle">Native Windows app — Tauri shell around the full TaskForge UI.</p>
+      <p class="subtitle">Native Windows app: a Tauri shell around the full TaskForge UI.</p>
       <template v-if="!failed">
         <a
           v-for="(a, i) in assets"
@@ -59,7 +59,7 @@ onMounted(async () => {
           class="asset"
           :class="{ primary: i === 0 }"
         >
-          <span>📦 {{ a.name }} <span class="kind">— {{ kindOf(a.name) }}</span></span>
+          <span>📦 {{ a.name }} <span class="kind">({{ kindOf(a.name) }})</span></span>
           <span class="size">{{ fmtSize(a.size) }}</span>
         </a>
       </template>
@@ -69,7 +69,7 @@ onMounted(async () => {
     </div>
     <div class="dl-card">
       <h3>TaskForge Web</h3>
-      <p class="subtitle">Nothing to install — the same product in your browser.</p>
+      <p class="subtitle">Nothing to install: the same product in your browser.</p>
       <a href="https://taskforge-app-869.netlify.app" class="asset primary">
         Open the web app →
       </a>

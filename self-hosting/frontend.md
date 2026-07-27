@@ -28,7 +28,7 @@ Then start the dev server and open `http://localhost:3000`:
 bun run dev
 ```
 
-The app expects a running [backend](/self-hosting/backend) — start that
+The app expects a running [backend](/self-hosting/backend), start that
 first, or point `NEXT_PUBLIC_API_URL` at a hosted instance.
 
 ## Production build
@@ -47,7 +47,7 @@ docker run -p 3000:3000 taskforge-frontend
 
 ## Deploying to Netlify
 
-The hosted instance runs on Netlify with the repository git-connected —
+The hosted instance runs on Netlify with the repository git-connected,
 every push to the main branch triggers a CI build on Netlify's
 infrastructure. To replicate:
 
@@ -63,7 +63,7 @@ NEXT_PUBLIC_WS_URL=wss://your-api.example.com
 
 ::: warning Build in CI, not locally
 Prefer git-connected CI builds over `netlify deploy --build` from a
-workstation — local builds bake your local `.env.local` (localhost URLs)
+workstation. Local builds bake your local `.env.local` (localhost URLs)
 into the production bundle, and Next.js edge-function bundling is not
 reliable on Windows.
 :::

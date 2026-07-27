@@ -7,7 +7,7 @@ If you just want to install it, use the [published installers](/guide/desktop) i
 ## Prerequisites
 
 - [Bun](https://bun.sh) 1.0+
-- [Rust](https://rustup.rs) (stable toolchain — Tauri's shell is Rust)
+- [Rust](https://rustup.rs) (stable toolchain, Tauri's shell is Rust)
 - Windows: Visual Studio Build Tools with the C++ workload, and the
   WebView2 runtime (preinstalled on Windows 10/11)
 
@@ -19,7 +19,7 @@ cd taskforge-desktop
 
 bun install
 
-# Point the app at an API — local backend or the hosted one
+# Point the app at an API - local backend or the hosted one
 cp .env.example .env
 ```
 
@@ -44,8 +44,8 @@ bun run tauri build
 
 Artifacts land in `src-tauri/target/release/bundle/`:
 
-- `msi/TaskForge_x.y.z_x64_en-US.msi` — MSI installer
-- `nsis/TaskForge_x.y.z_x64-setup.exe` — NSIS setup wizard
+- `msi/TaskForge_x.y.z_x64_en-US.msi`: MSI installer
+- `nsis/TaskForge_x.y.z_x64-setup.exe`: NSIS setup wizard
 
 ## Versioning
 

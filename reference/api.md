@@ -1,6 +1,6 @@
 # REST API
 
-Every screen in TaskForge — web and desktop — is driven by a public REST
+Every screen in TaskForge, web and desktop, is driven by a public REST
 API. Anything the UI does, you can script.
 
 ## Interactive docs
@@ -53,13 +53,13 @@ curl -H "Authorization: Bearer $ACCESS" \
 ```
 
 Your role in that organization (Admin / Member / Viewer) determines what
-each endpoint allows — the same rules the UI enforces.
+each endpoint allows, the same rules the UI enforces.
 
 ## Endpoint map
 
 | Area | Endpoints |
 |---|---|
-| **Organizations** | `organizations/` — list, create, detail, members, invites |
+| **Organizations** | `organizations/`: list, create, detail, members, invites |
 | **Projects** | `projects/`, `projects/{id}/`, `projects/{id}/archive/` |
 | **Project analytics** | `projects/{id}/timeline/`, `projects/{id}/analytics/`, `projects/{id}/activity/` |
 | **Import / export** | `projects/{id}/export/` (JSON), `projects/import/` (multipart `file` field) |
@@ -69,7 +69,7 @@ each endpoint allows — the same rules the UI enforces.
 | **Subtasks & comments** | `tasks/{id}/subtasks/`, `tasks/{id}/comments/`, `tasks/{id}/activity/` |
 | **Notifications** | `notifications/`, `notifications/unread-count/`, `notifications/mark-all-read/` |
 | **PDF reports** | `reports/` (create job), `reports/{id}/` (poll status), `reports/{id}/download/` |
-| **Health** | `/health/` — DB + Redis check, unauthenticated, never throttled |
+| **Health** | `/health/`: DB + Redis check, unauthenticated, never throttled |
 
 The dashboard rail maps directly onto the three analytics endpoints:
 `timeline/` feeds the Gantt panel, `analytics/` the velocity chart and
@@ -78,7 +78,7 @@ distribution donut, `activity/` the feed.
 ## Rate limiting
 
 Anonymous requests are throttled; authenticated traffic gets a higher
-budget. If you receive `429 Too Many Requests`, back off — the response's
+budget. If you receive `429 Too Many Requests`, back off. The response's
 `Retry-After` header tells you how long.
 
 ## WebSockets
