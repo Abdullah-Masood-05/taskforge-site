@@ -9,6 +9,11 @@
   <a href="https://bun.sh"><img src="https://img.shields.io/badge/Bun-latest-000000?logo=bun&logoColor=white" alt="Bun"/></a>
   <a href="https://pages.github.com"><img src="https://img.shields.io/badge/GitHub%20Pages-deployed-222222?logo=github&logoColor=white" alt="GitHub Pages"/></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPLv3-22c55e" alt="GPLv3 license"/></a>
+  <a href="https://github.com/Abdullah-Masood-05/taskforge-site/stargazers"><img alt="GitHub stars" src="https://img.shields.io/github/stars/Abdullah-Masood-05/taskforge-site?style=social&logo=github"></a>
+</p>
+
+<p align="center">
+  ⭐ <b>Enjoying TaskForge Docs?</b> If it's useful to you, please <a href="https://github.com/Abdullah-Masood-05/taskforge-site">star it on GitHub</a>. It's free and it helps other developers find it.
 </p>
 
 The documentation website for [TaskForge](https://taskforge-app-869.netlify.app):
