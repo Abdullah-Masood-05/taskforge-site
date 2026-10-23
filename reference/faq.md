@@ -6,9 +6,9 @@
 Yes. [taskforge-app-869.netlify.app](https://taskforge-app-869.netlify.app)
 is open; create an account or use the [demo credentials](/reference/demo-data).
 
-**Do web and desktop share data?**
-Yes. Both talk to the same API with the same account, a card you move on
-desktop is moved on the web instantly.
+**Do web, desktop and mobile share data?**
+Yes. All three talk to the same API with the same account, a card you move on
+desktop or mobile is moved on the web instantly.
 
 **Why are my dashboard charts empty?**
 The dashboard is computed from task data: the timeline needs tasks with
@@ -29,6 +29,25 @@ email. See [Import & export](/guide/import-export).
 **Windows says the desktop installer is unrecognized.**
 The installers aren't code-signed. SmartScreen shows "Windows protected
 your PC", click **More info → Run anyway**.
+
+**Android blocks the APK install.**
+The APK is sideloaded and signed with the debug key, so Android asks you to
+allow installs from unknown sources for the app you opened it from. Allow it
+and the install continues. See [the mobile app](/guide/mobile#install).
+
+**The mobile app is stuck on "waking up the server".**
+The hosted API runs on Render's free tier and sleeps when idle. The first
+request after a quiet spell can take a minute or so. The app keeps retrying
+while the server boots, so the screen loads by itself once it is up. Later
+requests are fast.
+
+**Is there an iPhone version?**
+The app builds for iOS, but there is no App Store or TestFlight release.
+You can build and sign it yourself, see
+[building the mobile app](/self-hosting/mobile).
+
+**Can I upload attachments from the mobile app?**
+No. Uploads are web only. The mobile app can open and remove attachments.
 
 ## Self-hosting
 
@@ -66,6 +85,7 @@ python manage.py runserver 127.0.0.1:8001
 **Where do I report bugs?**
 Open an issue on the matching repository:
 [backend](https://github.com/Abdullah-Masood-05/taskforge-backend/issues),
-[frontend](https://github.com/Abdullah-Masood-05/taskforge-frontend/issues) or
-[desktop](https://github.com/Abdullah-Masood-05/taskforge-desktop/issues),
+[frontend](https://github.com/Abdullah-Masood-05/taskforge-frontend/issues),
+[desktop](https://github.com/Abdullah-Masood-05/taskforge-desktop/issues) or
+[mobile](https://github.com/Abdullah-Masood-05/taskforge-mobile/issues),
 with steps to reproduce and a screenshot where it helps.

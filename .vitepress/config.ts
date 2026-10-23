@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
   title: 'TaskForge',
   description:
-    'Multi-tenant project management: Kanban boards, a mission-control project dashboard, and a native desktop app.',
+    'Multi-tenant project management: Kanban boards, a mission-control project dashboard, a native desktop app and a mobile app for Android and iOS.',
   base: '/taskforge-site/',
   // README.md is for GitHub (its image path is repo-relative), not a site page.
   srcExclude: ['README.md'],
@@ -19,7 +19,7 @@ export default defineConfig({
       {
         property: 'og:description',
         content:
-          'Multi-tenant project management: Kanban boards, a mission-control project dashboard, and a native desktop app.',
+          'Multi-tenant project management: Kanban boards, a mission-control project dashboard, a native desktop app and a mobile app for Android and iOS.',
       },
     ],
     ['meta', { property: 'og:image', content: 'https://abdullah-masood-05.github.io/taskforge-site/og-image.png' }],
@@ -31,7 +31,7 @@ export default defineConfig({
       {
         name: 'twitter:description',
         content:
-          'Multi-tenant project management: Kanban boards, a mission-control project dashboard, and a native desktop app.',
+          'Multi-tenant project management: Kanban boards, a mission-control project dashboard, a native desktop app and a mobile app for Android and iOS.',
       },
     ],
     ['meta', { name: 'twitter:image', content: 'https://abdullah-masood-05.github.io/taskforge-site/og-image.png' }],
@@ -62,6 +62,7 @@ export default defineConfig({
             { text: 'The project dashboard', link: '/guide/dashboard' },
             { text: 'Import, export & reports', link: '/guide/import-export' },
             { text: 'The desktop app', link: '/guide/desktop' },
+            { text: 'The mobile app', link: '/guide/mobile' },
           ],
         },
       ],
@@ -72,6 +73,7 @@ export default defineConfig({
             { text: 'Backend (Django API)', link: '/self-hosting/backend' },
             { text: 'Frontend (Next.js)', link: '/self-hosting/frontend' },
             { text: 'Desktop (Tauri)', link: '/self-hosting/desktop' },
+            { text: 'Mobile (Flutter)', link: '/self-hosting/mobile' },
           ],
         },
       ],
@@ -90,7 +92,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/Abdullah-Masood-05/taskforge-backend' },
     ],
     footer: {
-      message: 'TaskForge: web, API and desktop.',
+      message: 'TaskForge: web, API, desktop and mobile.',
       copyright: 'TaskForge',
     },
     search: { provider: 'local' },

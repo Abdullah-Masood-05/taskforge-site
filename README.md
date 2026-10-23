@@ -39,7 +39,7 @@ bun run docs:preview   # serve the built site locally
 ```
 index.md            # landing page (hero, downloads, quick tour)
 guide/              # how to use TaskForge (quickstart, board, dashboard, …)
-self-hosting/       # running the backend / frontend / desktop yourself
+self-hosting/       # running the backend / frontend / desktop / mobile yourself
 reference/          # REST API, demo data, FAQ
 .vitepress/         # config + theme (amber dark theme, download component)
 public/screenshots/ # images used across the guide
@@ -50,6 +50,7 @@ public/screenshots/ # images used across the guide
 - [taskforge-backend](https://github.com/Abdullah-Masood-05/taskforge-backend): Django REST API
 - [taskforge-frontend](https://github.com/Abdullah-Masood-05/taskforge-frontend): Next.js web app
 - [taskforge-desktop](https://github.com/Abdullah-Masood-05/taskforge-desktop): Tauri desktop app
+- [taskforge-mobile](https://github.com/Abdullah-Masood-05/taskforge-mobile): Flutter mobile app for Android and iOS
 
 ## License
 

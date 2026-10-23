@@ -8,12 +8,13 @@ and a live activity feed, all on one screen.
 
 ![The project dashboard: board, header and analytics rail](/screenshots/board-dashboard.png)
 
-It ships in three parts:
+It ships in four parts:
 
 | Part | What it is | Where it runs |
 |---|---|---|
 | **Web app** | Next.js 16 + React 19 UI | [taskforge-app-869.netlify.app](https://taskforge-app-869.netlify.app) or self-hosted |
 | **Desktop app** | The same UI in a native Tauri 2 shell | Windows (MSI / NSIS installers) |
+| **Mobile app** | A Flutter app on the same API and accounts | Android (APK); iOS builds from source |
 | **API** | Django 5 + DRF backend with JWT auth, WebSockets and OpenAPI docs | Hosted on Render or self-hosted |
 
 ## What it does
@@ -40,5 +41,6 @@ built on public endpoints you can call yourself.
 ## Next steps
 
 - [Quickstart](/guide/quickstart): from sign-up to a working board.
+- [The mobile app](/guide/mobile): install TaskForge on an Android phone.
 - [Self-hosting](/self-hosting/backend): run the whole stack yourself.
 - [Demo data](/reference/demo-data): explore a fully populated demo project.

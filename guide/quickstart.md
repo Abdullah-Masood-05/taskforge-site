@@ -1,7 +1,8 @@
 # Quickstart
 
 From sign-up to a working board in about five minutes. This walkthrough uses
-the hosted web app; the [desktop app](/guide/desktop) works identically.
+the hosted web app; the [desktop app](/guide/desktop) works identically, and
+the [mobile app](/guide/mobile) uses the same accounts and data.
 
 ::: tip Just want to look around?
 The demo organization comes fully populated: a 150-task project with a live
@@ -72,3 +73,4 @@ is computed.
 - [Projects & the Kanban board](/guide/board): cards, columns and workflow in depth
 - [Import, export & reports](/guide/import-export): JSON templates and PDF reports
 - [The desktop app](/guide/desktop): install TaskForge natively on Windows
+- [The mobile app](/guide/mobile): install TaskForge on Android

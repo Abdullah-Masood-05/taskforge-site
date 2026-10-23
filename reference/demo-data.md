@@ -13,6 +13,10 @@ fully populated product instead of an empty board.
 
 Demo organization slug: **`taskforge-demo`**.
 
+The same accounts work in the web, desktop and [mobile](/guide/mobile) apps.
+The mobile login screen has a **Use demo account** button that fills in the
+Admin credentials.
+
 Log in as each role to feel the difference: the Admin can manage members
 and projects, the Member can work the board, the Viewer sees everything
 but can change nothing.
