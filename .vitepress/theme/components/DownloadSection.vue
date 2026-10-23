@@ -7,10 +7,17 @@ interface Asset {
   browser_download_url: string;
 }
 
-const repo = 'Abdullah-Masood-05/taskforge-desktop';
-const version = ref('');
-const assets = ref<Asset[]>([]);
-const failed = ref(false);
+interface Release {
+  version: string;
+  assets: Asset[];
+  failed: boolean;
+}
+
+const desktopRepo = 'Abdullah-Masood-05/taskforge-desktop';
+const mobileRepo = 'Abdullah-Masood-05/taskforge-mobile';
+
+const desktop = ref<Release>({ version: '', assets: [], failed: false });
+const mobile = ref<Release>({ version: '', assets: [], failed: false });
 
 function fmtSize(bytes: number): string {
   return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
@@ -20,27 +27,49 @@ function kindOf(assetName: string): string {
   const n = assetName.toLowerCase();
   if (n.endsWith('.msi')) return 'Windows installer (MSI)';
   if (n.endsWith('.exe')) return 'Windows setup (NSIS)';
+  if (n.includes('arm64-v8a')) return 'most Android phones';
+  if (n.includes('universal')) return 'any Android device, larger';
+  if (n.includes('armeabi-v7a')) return 'older 32-bit phones';
+  if (n.includes('x86_64')) return 'emulators';
   return 'Download';
 }
 
-onMounted(async () => {
+// Order mobile APKs so the one most people need comes first.
+function apkRank(assetName: string): number {
+  const order = ['arm64-v8a', 'universal', 'armeabi-v7a', 'x86_64'];
+  const i = order.findIndex((k) => assetName.includes(k));
+  return i === -1 ? order.length : i;
+}
+
+async function load(repo: string, pattern: RegExp, target: typeof desktop) {
   try {
     const resp = await fetch(`https://api.github.com/repos/${repo}/releases/latest`);
     if (!resp.ok) throw new Error(String(resp.status));
     const release = await resp.json();
-    version.value = release.tag_name ?? '';
-    assets.value = (release.assets ?? [])
-      .filter((a: Asset) => /\.(msi|exe)$/i.test(a.name))
+    const assets: Asset[] = (release.assets ?? [])
+      .filter((a: Asset) => pattern.test(a.name))
       .map((a: Asset) => ({
         name: a.name,
         size: a.size,
         browser_download_url: a.browser_download_url,
       }));
-    if (assets.value.length === 0) failed.value = true;
+    target.value = {
+      version: release.tag_name ?? '',
+      assets,
+      failed: assets.length === 0,
+    };
   } catch {
     // Rate-limited or offline: fall back to the static release-page link.
-    failed.value = true;
+    target.value = { version: '', assets: [], failed: true };
   }
+}
+
+onMounted(async () => {
+  await Promise.all([
+    load(desktopRepo, /\.(msi|exe)$/i, desktop),
+    load(mobileRepo, /\.apk$/i, mobile),
+  ]);
+  mobile.value.assets.sort((x, y) => apkRank(x.name) - apkRank(y.name));
 });
 </script>
 
@@ -48,12 +77,37 @@ onMounted(async () => {
   <div class="dl-grid">
     <div class="dl-card">
       <h3>
-        TaskForge Desktop <span v-if="version" class="version">{{ version }}</span>
+        TaskForge Mobile <span v-if="mobile.version" class="version">{{ mobile.version }}</span>
+      </h3>
+      <p class="subtitle">Flutter app for Android, on the same accounts and API as the web app.</p>
+      <template v-if="!mobile.failed">
+        <a
+          v-for="(a, i) in mobile.assets"
+          :key="a.name"
+          :href="a.browser_download_url"
+          class="asset"
+          :class="{ primary: i === 0 }"
+        >
+          <span>📱 {{ a.name }} <span class="kind">({{ kindOf(a.name) }})</span></span>
+          <span class="size">{{ fmtSize(a.size) }}</span>
+        </a>
+      </template>
+      <a v-else :href="`https://github.com/${mobileRepo}/releases/latest`" class="asset primary">
+        View releases on GitHub →
+      </a>
+      <p class="subtitle" style="margin-top: 8px">
+        Android asks you to allow installs from your browser the first time.
+        See the <a href="/taskforge-site/guide/mobile">mobile guide</a> for which file to pick.
+      </p>
+    </div>
+    <div class="dl-card">
+      <h3>
+        TaskForge Desktop <span v-if="desktop.version" class="version">{{ desktop.version }}</span>
       </h3>
       <p class="subtitle">Native Windows app: a Tauri shell around the full TaskForge UI.</p>
-      <template v-if="!failed">
+      <template v-if="!desktop.failed">
         <a
-          v-for="(a, i) in assets"
+          v-for="(a, i) in desktop.assets"
           :key="a.name"
           :href="a.browser_download_url"
           class="asset"
@@ -63,7 +117,7 @@ onMounted(async () => {
           <span class="size">{{ fmtSize(a.size) }}</span>
         </a>
       </template>
-      <a v-else :href="`https://github.com/${repo}/releases/latest`" class="asset primary">
+      <a v-else :href="`https://github.com/${desktopRepo}/releases/latest`" class="asset primary">
         View releases on GitHub →
       </a>
     </div>

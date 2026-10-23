@@ -13,17 +13,24 @@ hero:
       text: Open the web app
       link: https://taskforge-app-869.netlify.app
     - theme: alt
-      text: Quickstart
-      link: /guide/quickstart
+      text: Get the Android app
+      link: '#download'
     - theme: alt
       text: Download desktop
       link: '#download'
+    - theme: alt
+      text: Quickstart
+      link: /guide/quickstart
 
 features:
   - icon: 🗂️
     title: Kanban that keeps up
     details: Drag-and-drop columns, multi-assignee avatar clusters, colored labels, due dates and per-card progress pills. Every change lands on the server instantly.
     link: /guide/board
+  - icon: 📱
+    title: Mobile app
+    details: A Flutter app for Android and iOS with the board, project dashboard, task detail and notifications, on the same accounts and API.
+    link: /guide/mobile
   - icon: 📊
     title: A dashboard per project
     details: A Gantt-style timeline, weekly velocity chart, priority distribution donut and a live activity feed sit beside the board, so you don't need a separate reporting tool.
@@ -40,10 +47,6 @@ features:
     title: Web and desktop
     details: The same UI ships as a Next.js web app and a Tauri-powered native Windows app with MSI and NSIS installers.
     link: /guide/desktop
-  - icon: 📱
-    title: Mobile app
-    details: A Flutter app for Android and iOS with the board, project dashboard, task detail and notifications, on the same accounts and API.
-    link: /guide/mobile
   - icon: 🔌
     title: An API you can build on
     details: Every screen is driven by a documented REST API, with Swagger UI and Redoc included, JWT authenticated, versioned under /api/v1/.
