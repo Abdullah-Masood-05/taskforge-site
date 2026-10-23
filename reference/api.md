@@ -69,7 +69,7 @@ each endpoint allows, the same rules the UI enforces.
 | **Subtasks & comments** | `tasks/{id}/subtasks/`, `tasks/{id}/comments/`, `tasks/{id}/activity/` |
 | **Notifications** | `notifications/`, `notifications/unread-count/`, `notifications/mark-all-read/` |
 | **PDF reports** | `reports/` (create job), `reports/{id}/` (poll status), `reports/{id}/download/` |
-| **Health** | `/health/`: DB + Redis check, unauthenticated, never throttled |
+| **Health** | `/health/`: liveness check with no database access, unauthenticated, never throttled. `/health/?deep=1` also checks Postgres and Redis |
 
 The dashboard rail maps directly onto the three analytics endpoints:
 `timeline/` feeds the Gantt panel, `analytics/` the velocity chart and

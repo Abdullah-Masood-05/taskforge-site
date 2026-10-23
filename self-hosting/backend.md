@@ -72,7 +72,9 @@ The essentials (full list in `.env.example`):
   notification layer uses Django Channels over WebSockets.
 - Point your platform's **health check at `/health/`**. The endpoint is
   deliberately exempt from API rate limiting. Platform probes fire every
-  few seconds and must never be throttled into a 429/restart loop.
+  few seconds and must never be throttled into a 429/restart loop. It also
+  skips the database, so probes don't keep a serverless database such as
+  Neon awake. Use `/health/?deep=1` when you want Postgres and Redis checked.
 - Run `python manage.py migrate` on every deploy; migrations are
   data-preserving.
 - The test suite (`pytest`) covers models, permissions and the API, run it
